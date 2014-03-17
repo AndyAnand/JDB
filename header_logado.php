@@ -21,13 +21,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.php" style="background-color:#FFD700;color:black">Jogo do Bicho</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="login.php">Login</a></li>
-            <li><a href="cadastrar.php">Cadastrar</a></li>
+            <li><a href="aposta.php">Fazer Aposta</a></li>
+            <li><a href="consulta_saldo.php">Saldo</a></li>
+            <li><a href="logout.php">Logout</a></li>
             <li><a href="contato.php">Contato</a></li>
           </ul>
         </div><!--/.nav-collapse -->

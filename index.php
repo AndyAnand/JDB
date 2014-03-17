@@ -1,7 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<?php include('header.php'); ?>
+	<?php 
+		session_start();
+		
+		if(isset($_SESSION['login'])){
+			include('header_logado.php');
+		}else{
+			include('header.php');
+		}
+	?>
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
     <body>
