@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="aposta.php">Fazer Aposta</a></li>
-            <li><a href="consulta_saldo.php">Saldo</a></li>
+            <li><a href="consulta_info.php">Informações</a></li>
             <li><a href="logout.php">Logout</a></li>
             <li><a href="contato.php">Contato</a></li>
           </ul>

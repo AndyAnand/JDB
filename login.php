@@ -9,9 +9,10 @@
   <body>
     
     <div class="container">
-
+	
     <?php
 		include('config.php');
+
 		if(isset($_POST['login'])){
 			if(isset($_SESSION['login'])){
 				session_unset($_SESSION['login']);
@@ -55,10 +56,8 @@
 						</form>';
 		}
 	?>
-      
-
-
-    </div> <!-- /container -->
+	<br>
+	</div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
