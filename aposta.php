@@ -49,6 +49,7 @@
 			}else{
 				$id = $user['id'];
 				$numero ='';
+				$id_corrida = $num['id'];
 				if(isset($_POST['m'])){
 					$numero = $numero.$_POST['m'];
 				}
@@ -57,7 +58,7 @@
 				}
 				$numero = $numero.$_POST['d'];
 				$numero = $numero.$_POST['u'];
-				$res = mysql_query("INSERT INTO aposta (valor,id,tipo,numero) values ('$preco','$id','$tipo','$numero')");
+				$res = mysql_query("INSERT INTO aposta (valor,id,tipo,numero,id_corrida) values ('$preco','$id','$tipo','$numero','$id_corrida')");
 				$novosaldo = $saldo - $preco;
 				$res2 = mysql_query("UPDATE login SET saldo = '$novosaldo' WHERE id='$id'");
 				echo '<center><h4 style="color:green"> Aposta submetida com sucesso, seu novo saldo é: R$ '.$novosaldo.'. </h4></center>';

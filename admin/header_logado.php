@@ -22,6 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.php" style="background-color:#FFD700;color:black">Jogo do Bicho</a>
         </div>
@@ -29,6 +30,7 @@
           <ul class="nav navbar-nav">
             <li><a href="cadastrar.php">Cad. Admin</a></li>
             <li><a href="insere_milhar.php">Inserir Milhares</a></li>
+            <li><a href="corridas.php">Corridas</a></li>
             <li><a href="logout.php">Logout</a></li>
             <li><a href="contato.php">Contato</a></li>
           </ul>

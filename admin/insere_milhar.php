@@ -15,8 +15,17 @@
 		$login = $_SESSION['login'];
 		
 		$res = mysql_query("SELECT * FROM login WHERE email='$login'");
+		$res2 = mysql_query("SELECT * FROM corridaatual");
+		
+		$id = mysql_fetch_array($res2);
+		$last_id = $id['id'];
 		
 		$user = mysql_fetch_array($res);
+		
+		if($last_id != -1){
+			echo '<center><h5 style="color:red"><br><br><br><br>Há uma corrida não finalizada, finalize-a antes de inserir uma nova!</h5></center>';
+			return;
+		}
 		
 		if(isset($_POST['m1'])){
 			$m1 = '';
@@ -50,9 +59,10 @@
 			$m5 = $m5.$_POST['d5'];
 			$m5 = $m5.$_POST['u5'];
 
-			$res = mysql_query("INSERT INTO corrida (m1,m2,m3,m4,m5) VALUES ('$m1','$m2','$m3','$m4','$m5')");
+			$res = mysql_query("INSERT INTO corrida (m1,m2,m3,m4,m5,status) VALUES ('$m1','$m2','$m3','$m4','$m5','1')");
 			$last_id = mysql_insert_id();
 			$res2 = mysql_query("UPDATE corridaatual SET id='$last_id'");
+			$res3 = mysql_query("UPDATE corrida SET sha1_id='SHA1($last_id)' WHERE id='$last_id'");
 			
 			echo '<center><h5 style="color:green"><br><br>Milhares Inseridas com Sucesso!!!!</h5></center>';
 			header('refresh: 3; url=index.php');
