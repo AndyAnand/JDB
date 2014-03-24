@@ -15,7 +15,8 @@
 		$login = $_SESSION['login'];
 		
 		$res = mysql_query("SELECT * FROM login WHERE email='$login'");
-		
+		$res2 = mysql_query("SELECT * FROM corridaatual");
+		$num = mysql_fetch_array($res2);
 		$user = mysql_fetch_array($res);
 		$tipo = '';
 		if(isset($_POST['milhar'])){
@@ -41,6 +42,9 @@
 		if($tipo != '000'){
 			if($saldo < $preco){
 				echo '<br><br><center><b><h3 style="color:red">Saldo insuficiente! Comprar <a href="comprar.php">aqui</a></h3></b></center>';
+				return;
+			}else if($num['id'] == -1){
+				echo '<br><br><center><b><h3 style="color:red">Nenhuma corrida aberta no servidor!<br> Tente novamente mais tarde!</h3></b></center>';
 				return;
 			}else{
 				$id = $user['id'];
